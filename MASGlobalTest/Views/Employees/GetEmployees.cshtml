@@ -1,0 +1,30 @@
+﻿@using (Html.BeginForm())
+{
+    <br />
+    <p>
+        ID Employee: @Html.TextBox("searchString")
+        <input type="submit" value="Get Employee" />
+    </p>
+}
+@model IEnumerable<MASGlobalTest.Models.Employee>
+
+<h2>List of Employees</h2>
+
+<div>
+    @{
+        var grid = new WebGrid(Model, defaultSort: "Id");
+    }
+    @grid.GetHtml(tableStyle: "table table-responsive table-bordered", columns: grid.Columns(
+    grid.Column("Id", header:"Id"),
+    grid.Column("Name", header: "Name"),
+    grid.Column("ContractTypeName", header: "ContractTypeName"),
+    grid.Column("RoleId", header: "RoleId"),
+    grid.Column("RoleName", header: "RoleName"),
+    grid.Column("RoleDescription", header: "RoleDescription"),
+    grid.Column("HourlySalary", header: "HourlySalary"),
+    grid.Column("MonthlySalary", header: "MonthlySalary"),
+    grid.Column("AnnualSalary", header: "AnnualSalary")
+    ))
+</div>
+
+

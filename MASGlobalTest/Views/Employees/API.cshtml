@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "API";
+}
+<div style="text-align:center">
+    <h4>You can consume the API as follows: </h4>
+    <h4>Please change the correct port that asigns your VS 2017 => http://localhost:50218</h4>
+    <h4>GET api/data => http://localhost:50218/api/data/ </h4>
+    <h4>GET api/data/id/ =>http://localhost:50218/api/data/1 </h4>
+</div>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Get Employee (Id)", "data/1", "api", new { area = "" }, null)</li>
+        <li>@Html.ActionLink("Get All Employes", "data", "api", new { area = "" }, null)</li>
+    </ul>    
+</div>
+
+
